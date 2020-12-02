@@ -5,7 +5,6 @@ import dlib
 import cv2
 from imutils import video
 import argparse
-from pdb import set_trace
 import time
 from tqdm import tqdm
 

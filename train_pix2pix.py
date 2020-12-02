@@ -1,26 +1,18 @@
 from gan_components import *
 from utils import *
-
 import torch
 import torch.optim as optim
 import torch.nn.init as init
-
 import argparse
-
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
-
 import torchvision
 from torchvision import transforms
-
 from datetime import datetime
 import json
-
 import os
 import shutil
-
 from tqdm.auto import tqdm
-from pdb import set_trace
 
 
 if __name__ == '__main__':
@@ -33,13 +25,13 @@ if __name__ == '__main__':
 
     parser.add_argument('-b', '--batch_size', type=int, default=4,  help='Batch size. On a V100 (16GB) 10 is fine.')
 
-    parser.add_argument('-tra', '--training_folder', type=str, default='oliverk', help='Name of the folder with the preprocessed images that should be used for training. Folder has to be a subfolder of ./preprocessed_images. Only the name relative to ./preprocessed_images is necessary.')
+    parser.add_argument('-trainf', '--training_folder', type=str, default='oliverk_demo', help='Name of the folder with the preprocessed images that should be used for training. Folder has to be a subfolder of ./preprocessed_images. Only the name relative to ./preprocessed_images is necessary.')
 
-    parser.add_argument('-tes', '--test_folder', type=str, default='marcel', help='Name of the folder with the preprocessed images that should be used for testing. Folder has to be a subfolder of ./preprocessed_images. Only the name relative to ./preprocessed_images is necessary.')
+    parser.add_argument('-testf', '--test_folder', type=str, default='marcel_demo', help='Name of the folder with the preprocessed images that should be used for testing. Folder has to be a subfolder of ./preprocessed_images. Only the name relative to ./preprocessed_images is necessary.')
 
     parser.add_argument('-l','--lambda_pix', type=int, default=350, help='Weighting factor of the pix loss in the generator\'s cost function.')
 
-    parser.add_argument('-d','--dropout_rate', type=float, default=0.45, help='Dropout rate used in various layers of the GAN.')
+    parser.add_argument('-d','--dropout_rate', type=float, default=0.55, help='Dropout rate used in various layers of the GAN.')
 
     parser.add_argument('-e','--epochs', type=int, default=30, help='Number of epochs to train the model.')
 

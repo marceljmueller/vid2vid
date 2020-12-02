@@ -4,7 +4,6 @@ import torch.optim as optim
 import torch.nn.init as init
 import os
 import json
-from pdb import set_trace
 
 # Skeleton functions
 def channel_map_conv(input_channels, output_channels):

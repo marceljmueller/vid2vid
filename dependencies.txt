@@ -1,5 +1,6 @@
 dlib>=19.21.0
 imageio>=2.9.0
+imutils>=0.5.2
 matplotlib>=3.3.2
 moviepy>=1.0.3
 numpy>=1.18.5
