@@ -1,3 +1,4 @@
+
 # vid2vid in PyTorch
 
 This is a video to video translation of portrait perspective videos built upon a [pix2pix](https://arxiv.org/abs/1611.07004) model. The idea is to have a character S (style) say something on behalf of character C (content). As input data you need two quadratically shaped portrait perspective videos, one of character S and one of character C. Only the video of character C needs to have an audio line, the audio of S is ignored.
@@ -10,7 +11,7 @@ In short, the following pipeline describes the vid2vid procedure step by step:
 
 1. The video of character S is sliced into numerous individual images. This video is labeled the *style* video, as it represents the target style of the project.
 
-2. A pertained facial landmark detector is used to extract the facial landmarks of these images in order to create a facial mask of each image.
+2. A pretained facial landmark detector ([code](https://github.com/davisking/dlib/blob/master/examples/face_detection_ex.cpp), [paper](https://pdfs.semanticscholar.org/d78b/6a5b0dcaa81b1faea5fb0000045a62513567.pdf), [pretrained model](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)) is used to extract the facial landmarks of these images in order to create a facial mask of each image.
 
 3. The results of the previous two steps are concatenated to a training set. I.e., the facial masks from step 2 provide the training data and the raw images from step 1 provide the training labels.
 
@@ -29,19 +30,19 @@ In short, the following pipeline describes the vid2vid procedure step by step:
 
 ## Prerequisites
 * Python 3
-* GPU + CUDA (for testing also on CPU possible)
+* GPU + CUDA (for testing purposes CPU also works)
 ## Installation
 
 
-1. Clone this repo
+1. Clone this repo:
 ```
-git clone
+git clone https://github.com/marceljmueller/vid2vid.git
 ```
 2. Install the dependencies:
 ```
 pip install -r dependencies.txt
 ```
-3. Download data (you could also use your own data right away but at the very least you need to download the facial landmark model). Run:
+3. Download data (you could also use your own data right away but at the very least you need to download the facial landmark model):
 ```
 python download_data.py
 ```
@@ -141,6 +142,6 @@ This covers steps 6 and 7 from the pipeline introduced above. You can start pred
 python predict_and_postprocess.py -t ./data/output/demo_run/demo_run_e30.pth
 ```
 
-The algorithm then uses the images from the `test_folder` of the training run (which it automatically loads from the `*.pth` accompanying `.json`file) as input images for the prediction. Also, the audio from the *content* video is added to the result (in the demo there is no audio, but you can try it yourself including audio in the *content* video). Note that the algorithm by default assumes that the *content* video has the same name (without the `.mp4` ending) as the `test_folder`.  You could alternatively specify another input folder via the `--input_folder` flag, as well as another *content* video via the `--conditional_video` flag (to see all possible parameters that can be set run the `-h` flag).
+The algorithm then uses the images from the `test_folder` of the training run (which it automatically loads from the `*.pth` accompanying `.json`file) as input images for the prediction. Also, the audio from the *content* video is added to the result. Note that the algorithm by default assumes that the *content* video has the same name (without the `.mp4` ending) as the `test_folder`.  You could alternatively specify another input folder via the `--input_folder` flag, as well as another *content* video via the `--conditional_video` flag (to see all possible parameters that can be set run the `-h` flag).
 
 Done, the result is stored under `./data/output/output_images_and_videos/demo_run_e30/video`.
