@@ -1,6 +1,6 @@
 {
     "model_name": "demo_run",
-    "batch_size": 4,
+    "batch_size": 8,
     "training_folder": "oliverk_demo",
     "test_folder": "marcel_demo",
     "lambda_pix": 350,
@@ -13,6 +13,6 @@
     "learning_rate_discriminator": 0.0002,
     "number_of_blocks_generator": 6,
     "number_of_blocks_discriminator": 4,
-    "number_of_channels_generator": 64,
-    "number_of_channels_discriminator": 32
+    "number_of_channels_generator": 32,
+    "number_of_channels_discriminator": 16
 }
