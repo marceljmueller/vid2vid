@@ -37,6 +37,7 @@ In short, the following pipeline describes the vid2vid procedure step by step:
 1. Clone this repo:
 ```
 git clone https://github.com/marceljmueller/vid2vid.git
+cd vid2vid
 ```
 2. Install the dependencies:
 ```
