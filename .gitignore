@@ -127,3 +127,20 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Sublime
+.sublime-project
+.sublime-workspace
+sftp-config.json
+
+# Project specific
+runs/*
+data/facial_landmark_model/*
+data/output/*
+data/output_images_and_videos/*
+data/preprocessed_images/*
+data/raw_video/*
+tmp
+param_configs
+README.html
+

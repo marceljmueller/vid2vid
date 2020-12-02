@@ -1,0 +1,18 @@
+{
+    "model_name": "demo_run",
+    "batch_size": 4,
+    "training_folder": "oliverk_demo",
+    "test_folder": "marcel_demo",
+    "lambda_pix": 350,
+    "dropout_rate": 0.55,
+    "epochs": 30,
+    "checkpoints": [10,20],
+    "output_step": 50,
+    "base_image_size": 256,
+    "learning_rate_generator": 0.0001,
+    "learning_rate_discriminator": 0.0002,
+    "number_of_blocks_generator": 6,
+    "number_of_blocks_discriminator": 4,
+    "number_of_channels_generator": 64,
+    "number_of_channels_discriminator": 32
+}
