@@ -14,7 +14,7 @@ In short, the following pipeline describes the vid2vid procedure step by step:
 
 3. The results of the previous two steps are concatenated to a training set. I.e., the facial masks from step 2 provide the training data and the raw images from step 1 provide the training labels.
 
-<p align="center"><img src='imgs/train_data_labels.png' align="center" width=350></p>
+<p align="center"><img src='imgs/training_data_labels.png' align="center" width=350></p>
 
 4. A pix2pix model is trained based on the training data from step 3.
 
