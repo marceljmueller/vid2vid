@@ -129,8 +129,8 @@ dmypy.json
 .pyre/
 
 # Sublime
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 sftp-config.json
 
 # Project specific
