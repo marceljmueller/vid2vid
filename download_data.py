@@ -37,8 +37,8 @@ def save_response_content(response, destination):
 
 if __name__ == '__main__':
 
-    dl_path_facial_landmark_model = '12cTovCMw48PV8ncNPOSQKPu62l45eMIy'
-    dl_path_videos = '12cTovCMw48PV8ncNPOSQKPu62l45eMIy'
+    dl_path_facial_landmark_model = '1dvD2J4ZbqzfC77d-MvMueoHgNfX9Pkh8'
+    dl_path_videos = '1v0f90XUN-gdG-HCMK-EHgpdHzxLTJMCX'
 
     facial_landmark_tmp = './tmp/facial_landmark_model.tar.gz'
     facial_landmark_dest = './data/facial_landmark_model'
