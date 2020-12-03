@@ -135,6 +135,8 @@ dmypy.json
 *.sublime-workspace
 sftp-config.json
 
+!/**/.gitkeep
+
 # Project specific
 runs/*
 data/facial_landmark_model/*
