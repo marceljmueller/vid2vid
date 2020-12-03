@@ -136,14 +136,27 @@ dmypy.json
 sftp-config.json
 
 !/**/.gitkeep
+!.gitkeep
 
 # Project specific
 runs/*
+!/**/.gitkeep
+
 data/facial_landmark_model/*
+!/**/.gitkeep
+
 data/output/*
+!/**/.gitkeep
+
 data/output_images_and_videos/*
+!/**/.gitkeep
+
 data/preprocessed_images/*
+!/**/.gitkeep
+
 data/raw_video/*
+!/**/.gitkeep
+
 tmp
 param_configs
 README.html
