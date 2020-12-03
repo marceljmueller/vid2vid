@@ -115,9 +115,9 @@ The easiest way to setup and train the model is to make use of a `.json` file co
 
 * `number_of_blocks_discriminator` Number of convolutional blocks of the discriminator, int. The discriminator only has an encoder part, hence, this is equal to the actual number of blocks of the entire discriminator.
 
-* `number_of_channels_generator'` Number of channels of the first convolutional block of the generator, int. Note that this can be different from the number of channels of the images used, since, as common in pix2pix, there is a mapping layer before the first convolutional block as well as after the last one.
+* `number_of_channels_generator` Number of channels of the first convolutional block of the generator, int. Note that this can be different from the number of channels of the images used, since, as common in pix2pix, there is a mapping layer before the first convolutional block as well as after the last one.
 
-* `number_of_channels_generator'` Number of channels of the first convolutional block of the discriminator, int.
+* `number_of_channels_discriminator` Number of channels of the first convolutional block of the discriminator, int.
 
 After having defined the parameters in `param_demo.json` you can start the training with:
 
@@ -128,7 +128,7 @@ python train_pix2pix.py -j param_demo.json
 As mentioned under `checkpoints` above, the model is at the very least saved every 5 epochs. Saving includes a `.json` file which contains the architecture of the model. If training gets interrupted for any reason, you can restart from the checkpoints simply by running a command like:
 
 ```
-train_pix2pix.py -pt './data/output/demo_run/demo_run_e5.pth'
+train_pix2pix.py -pt ./data/output/demo_run/demo_run_running.pth
 ```
 
 The model then gets automatically rebuilt by referring to the `.json` file `./data/output/demo_run/demo_run_e5.json` as well the saved model's weights (`*.pth` file).
@@ -146,3 +146,6 @@ python predict_and_postprocess.py -t ./data/output/demo_run/demo_run_e30.pth
 The algorithm then uses the images from the `test_folder` of the training run (which it automatically loads from the `*.pth` accompanying `.json`file) as input images for the prediction. Also, the audio from the *content* video is added to the result. Note that the algorithm by default assumes that the *content* video has the same name (without the `.mp4` ending) as the `test_folder`.  You could alternatively specify another input folder via the `--input_folder` flag, as well as another *content* video via the `--conditional_video` flag (to see all possible parameters that can be set run the `-h` flag).
 
 Done, the result is stored under `./data/output/output_images_and_videos/demo_run_e30/video`.
+
+Note that the demo specification is optimized for performance. To get prettier videos you can simply increase the model size (e.g., number_of_channels_generator = 64 and number_of_channels_discriminator = 32) and train the model for longer (e.g., 100 epochs).
+
