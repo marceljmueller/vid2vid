@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # General
-.DS_Store
+*.DS_Store
 # Sublime
 *.sublime-project
 *.sublime-workspace
